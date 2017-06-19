@@ -22,7 +22,7 @@ $objForm.StartPosition = "CenterScreen"
 #set Key actions
 $objForm.KeyPreview = $True
 $objForm.Add_KeyDown({if ($_.KeyCode -eq "Enter") 
-    {$x=$objTextBox.Text;$objForm.Close()}})
+    {$Name=$objNameTextBox.Text;$Email=$objEmailTextBox.Text;Set-UserInfo $Name $Email;$objForm.Close()}})
 $objForm.Add_KeyDown({if ($_.KeyCode -eq "Escape") 
     {$objForm.Close()}})
 
